@@ -4,7 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,8 +15,8 @@ public class Methods {
 
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver");
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
+		driver = new ChromeDriver();
 	}
 
 	@Test
@@ -40,12 +40,11 @@ public class Methods {
 		Thread.sleep(2000);
 		driver.manage().window().fullscreen();//manage() & fullscreen() methods
 		Thread.sleep(2000);
-		driver.quit();
 	}
 	
 	@AfterTest
 	public void tearUp() {
 		driver.quit();
 	}
-
+	
 }
